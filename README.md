@@ -5,7 +5,7 @@ Perfect for **real estate investors**, **agents and brokers**, **analysts and re
 ## What does Realtor.com Scraper do?
 
 - **Three ways to search** — paste Realtor.com **links**, type **locations** (cities, ZIP codes, counties, neighborhoods, whole states) or give **addresses, property IDs and listing links**.
-- **Every listing type** — for sale (optionally with new-construction plans), for rent, recently sold and off market.
+- **Every listing type** — for sale (including builder "to be built" plans, exactly as on realtor.com), for rent, recently sold and off market.
 - **30+ filters** — property type, price, bedrooms, bathrooms, living area, lot size, year built, HOA, listing age, price reductions, open houses, keywords, 50+ features, new construction, foreclosures, 55+ communities, pending / contingent, virtual and 3D tours, pet policy, radius or a drawn area.
 - **Go beyond 10,000 results** — Realtor.com stops a single search at 10,000 properties; large searches are read in parts so you can reach every match in a state or a metro area.
 - **Full or summary** — the complete property record, or just what the search results show for fast, small exports.
@@ -103,7 +103,7 @@ Look up exact properties:
 |---|---|
 | **Search by** | `links`, `locations` or `properties` — one mode per run; the other sections are ignored |
 | **Links** | search or property links copied from realtor.com |
-| **Locations** + **Listing type** | cities, ZIP codes, counties, neighborhoods or states; for sale, for sale + new-construction plans, for rent, sold or off market |
+| **Locations** + **Listing type** | cities, ZIP codes, counties, neighborhoods or states; for sale (with builder plans, like realtor.com), for sale (existing listings only), for rent, sold or off market |
 | **Properties** | street addresses, property IDs or property links |
 | **Filters** | property types, price, bedrooms, bathrooms, living area, lot size, year built, HOA, listed / price-reduced / open-house / sold windows, keywords, features, new construction, foreclosure, 55+, pending / contingent, coming soon, tours, pets, radius, drawn area, sort |
 | **Max results per search** | `0` = every match |
@@ -216,6 +216,10 @@ Realtor.com itself cuts any single search at 10,000 properties. With **Go beyond
 
 Yes. In **Locations** choose the **Listing type**; in **Links** paste the matching realtor.com link (sold, rentals and so on). Sold searches can be limited to the last N days, and **Price** then means the sold price.
 
+### Does it include new-construction (builder) plans?
+
+Yes. Realtor.com shows builder "to be built" plans in sale searches, and so does this Actor: pasted links return exactly what the link shows on realtor.com, and **Listing type: For sale** includes them. Choose **For sale: existing listings only** to leave them out.
+
 ### Can I look up one address or property ID?
 
 Yes — use **Search by: Properties**. Addresses are matched with Realtor.com's own address lookup; anything that does not match is skipped and listed in the log.
@@ -240,6 +244,7 @@ It saves its progress and continues where it left off instead of starting over.
 | An option does not apply to the search | the log lists what was not used | for example *cats allowed* only applies to rentals |
 | A typed place was not found | `Skipping "…" — no matching place found` | add the state, e.g. `Springfield, IL` |
 | The maximum cost per run was reached | the status message says the limit was reached | raise the limit |
+| Nothing matches | one row (`no_results`) and a log line list your filters and which single filter, left out, would bring properties back | loosen that filter; nothing is charged |
 | Wrong or empty input | one row in the dataset explains what to change | follow the row; nothing is charged |
 
 ### I used an earlier version. What changed?
