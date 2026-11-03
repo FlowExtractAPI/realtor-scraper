@@ -220,6 +220,10 @@ Yes. In **Locations** choose the **Listing type**; in **Links** paste the matchi
 
 Yes. Realtor.com shows builder "to be built" plans in sale searches, and so does this Actor: pasted links return exactly what the link shows on realtor.com, and **Listing type: For sale** includes them. Choose **For sale: existing listings only** to leave them out.
 
+### Which Realtor.com links can I paste?
+
+Search results links (for sale, sold, rentals, open houses and so on, with any filters) and single-property links. Links to other Realtor.com pages — the home page, selling, mortgage, news or agent pages — hold no listings, so they are skipped with a short explanation and nothing is charged. A search link that names no place is skipped too; add a city, ZIP code, county or neighborhood to it.
+
 ### Can I look up one address or property ID?
 
 Yes — use **Search by: Properties**. Addresses are matched with Realtor.com's own address lookup; anything that does not match is skipped and listed in the log.
